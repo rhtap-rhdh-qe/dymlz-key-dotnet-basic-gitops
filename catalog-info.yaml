@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: dymlz-key-dotnet-basic-gitops
+  description: This is GitOps manifest for dymlz-key-dotnet-basic   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: dymlz-key-dotnet-basic
+    janus-idp.io/tekton: dymlz-key-dotnet-basic 
+    backstage.io/kubernetes-id: dymlz-key-dotnet-basic 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:dymlz-key-dotnet-basic
